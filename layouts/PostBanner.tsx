@@ -1,14 +1,14 @@
-import { ReactNode } from 'react'
-import Image from '@/components/Image'
-import Bleed from 'pliny/ui/Bleed'
-import { CoreContent } from 'pliny/utils/contentlayer'
-import type { Blog } from 'contentlayer/generated'
 import Comments from '@/components/Comments'
+import Image from '@/components/Image'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
+import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
-import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import type { Blog } from 'contentlayer/generated'
+import Bleed from 'pliny/ui/Bleed'
+import { CoreContent } from 'pliny/utils/contentlayer'
+import { ReactNode } from 'react'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -30,12 +30,12 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           <div className="space-y-1 pb-10 text-center dark:border-gray-700">
             <div className="w-full">
               <Bleed>
-                <div className="aspect-[2/1] w-full relative">
+                <div className="relative aspect-[2/1] w-full">
                   <Image src={displayImage} alt={title} fill className="object-cover" />
                 </div>
               </Bleed>
             </div>
-            <div className="pt-10 relative">
+            <div className="relative pt-10">
               <PageTitle>{title}</PageTitle>
             </div>
           </div>
